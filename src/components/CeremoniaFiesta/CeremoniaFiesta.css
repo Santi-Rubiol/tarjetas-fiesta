@@ -1,0 +1,39 @@
+.ceremonia-container {
+  background: linear-gradient(135deg, #fef6e4 0%, #fff8f0 100%);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: #6b4c4c;
+}
+
+.ceremonia-titulo {
+  font-family: 'Georgia', serif;
+  font-size: 1.8rem;
+  color: #dba39a;
+  margin-bottom: 1rem;
+}
+
+.ceremonia-texto {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #7b6f6f;
+}
+
+.ceremonia-detalle {
+  background-color: #fff;
+  border: 1px solid #f8cdda;
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 0 auto 1.5rem;
+  max-width: 320px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.ceremonia-mensaje {
+  font-size: 0.95rem;
+  color: #5a4e4e;
+  font-style: italic;
+}
+
+/* Mobile first: ya optimizado para pantallas pequeñas */

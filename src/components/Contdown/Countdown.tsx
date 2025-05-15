@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import './Countdown.css'
 
 type CountdownProps = {
   targetDate: string
   title?: string
-  accentColor?: string // Tailwind color class
-  bgColor?: string // Tailwind background class
+  accentColor?: string
+  bgColor?: string
 }
 
 const Countdown: React.FC<CountdownProps> = ({
   targetDate,
   title = '¡Falta muy poco!',
-  accentColor = 'text-rose-500',
-  bgColor = 'bg-white/10',
+  accentColor = 'accent-default',
+  bgColor = 'bg-default',
 }) => {
   const calculateTimeLeft = () => {
     const difference = +new Date(targetDate) - +new Date()
@@ -36,6 +37,8 @@ const Countdown: React.FC<CountdownProps> = ({
   }
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft())
+  const [isVisible, setIsVisible] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -43,6 +46,25 @@ const Countdown: React.FC<CountdownProps> = ({
     }, 1000)
     return () => clearInterval(timer)
   }, [targetDate])
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.3 }
+    )
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current)
+    }
+
+    return () => {
+      if (containerRef.current) observer.unobserve(containerRef.current)
+    }
+  }, [])
 
   const timeUnits = [
     { label: 'Días', value: timeLeft.days },
@@ -53,25 +75,18 @@ const Countdown: React.FC<CountdownProps> = ({
 
   return (
     <div
-      className={`w-full px-4 py-8 rounded-2xl shadow-xl text-center ${bgColor}`}
+      ref={containerRef}
+      className={`countdown-container ${bgColor} ${isVisible ? 'fade-in' : ''}`}
     >
-      <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
-        {title}
-      </h2>
-      <div className="flex justify-center gap-3 sm:gap-6">
+      <h2 className="countdown-title">{title}</h2>
+      <div className="countdown-grid">
         {timeUnits.map(({ label, value }) => (
           <div
             key={label}
-            className="flex flex-col items-center"
+            className="countdown-item"
           >
-            <div
-              className={`text-5xl sm:text-6xl font-extrabold leading-tight ${accentColor} drop-shadow-md`}
-            >
-              {value}
-            </div>
-            <span className="text-xs sm:text-sm text-white uppercase tracking-wide mt-2">
-              {label}
-            </span>
+            <div className={`countdown-value ${accentColor}`}>{value}</div>
+            <span className="countdown-label">{label}</span>
           </div>
         ))}
       </div>

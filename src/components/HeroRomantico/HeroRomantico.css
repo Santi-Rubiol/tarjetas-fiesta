@@ -1,0 +1,80 @@
+.hero-container {
+  background: linear-gradient(135deg, #f8cdda 0%, #fef6e4 100%);
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 500px;
+  margin: auto;
+}
+
+.hero-nombres {
+  font-family: 'Georgia', serif;
+  font-size: 2.5rem;
+  color: #dba39a;
+  margin-bottom: 1rem;
+}
+
+.hero-frase {
+  font-size: 1.1rem;
+  color: #6b4c4c;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.hero-boton {
+  margin-top: 2rem;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  background-color: #e4d9f7;
+  color: #5a4e6c;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero-boton:hover {
+  background-color: #d0c2f0;
+}
+
+.hero-ubicacion {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #7b6f6f;
+}
+
+/* Estilos pastel para el contador */
+.bg-romantic {
+  background-color: #ffffffaa;
+  border: 1px solid #f8cdda;
+}
+
+.accent-romantic {
+  color: #dba39a;
+}
+
+/* Adaptación móvil */
+@media (max-width: 480px) {
+  .hero-nombres {
+    font-size: 2rem;
+  }
+
+  .hero-frase {
+    font-size: 1rem;
+  }
+
+  .hero-boton {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.5rem;
+  }
+
+  .hero-ubicacion {
+    font-size: 0.8rem;
+  }
+}

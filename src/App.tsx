@@ -1,5 +1,5 @@
-import Principal from './page/Principal/Principal.js'
+import TarjetaCasamiento from './pages/TarjetaCasamiento/TarjetaCasamiento'
 
 export default function App() {
-  return <Principal />
+  return <TarjetaCasamiento />
 }

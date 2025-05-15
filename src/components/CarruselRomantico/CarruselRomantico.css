@@ -1,0 +1,51 @@
+.carrusel-container {
+  background: linear-gradient(135deg, #fff0f6 0%, #fef6e4 100%);
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #5e4b4b;
+  overflow: hidden;
+}
+
+.carrusel-titulo {
+  font-family: 'Georgia', serif;
+  font-size: 1.7rem;
+  color: #dba39a;
+  margin-bottom: 1.5rem;
+}
+
+.carrusel-scroll {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.carrusel-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.carrusel-item {
+  min-width: 80%;
+  max-width: 90%;
+  scroll-snap-align: center;
+  flex-shrink: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.carrusel-item:hover {
+  transform: scale(1.02);
+}
+
+.carrusel-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}

@@ -1,0 +1,36 @@
+.mensaje-container {
+  background: linear-gradient(135deg, #e4d9f7 0%, #fef6e4 100%);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: #5e4b4b;
+}
+
+.mensaje-titulo {
+  font-family: 'Georgia', serif;
+  font-size: 1.7rem;
+  color: #b47b84;
+  margin-bottom: 1.2rem;
+}
+
+.mensaje-frase {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5f5f;
+  margin-bottom: 1.5rem;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mensaje-extra {
+  background-color: #ffffffcc;
+  border: 1px solid #e0bbff;
+  padding: 1rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: #4d3b3b;
+  line-height: 1.6;
+  max-width: 320px;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}

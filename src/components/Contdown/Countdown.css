@@ -1,0 +1,99 @@
+.countdown-container {
+  padding: 2rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, opacity 1s ease;
+  max-width: 600px;
+  margin: 1rem auto;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.countdown-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.countdown-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 60px;
+}
+
+.countdown-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.countdown-label {
+  margin-top: 0.4rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+  opacity: 0.8;
+}
+
+/* Paleta de colores base */
+.bg-default {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.bg-dark {
+  background-color: #111;
+}
+
+.accent-default {
+  color: #ff4d6d;
+}
+
+.accent-blue {
+  color: #339af0;
+}
+
+.accent-green {
+  color: #51cf66;
+}
+
+/* Responsive diseño móvil */
+@media (max-width: 480px) {
+  .countdown-container {
+    padding: 1rem;
+  }
+
+  .countdown-title {
+    font-size: 1.5rem;
+  }
+
+  .countdown-grid {
+    gap: 1rem;
+  }
+
+  .countdown-value {
+    font-size: 2rem;
+  }
+
+  .countdown-label {
+    font-size: 0.65rem;
+  }
+}

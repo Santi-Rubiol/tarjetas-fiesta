@@ -1,0 +1,42 @@
+.pie-container {
+  background: linear-gradient(135deg, #fef6e4 0%, #f8cdda 100%);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  color: #5a4e4e;
+  font-size: 0.95rem;
+}
+
+.pie-frase {
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: #7b6f6f;
+}
+
+.pie-autor {
+  font-size: 0.85rem;
+  color: #8a6d6d;
+}
+
+.pie-autor a {
+  text-decoration: none;
+  color: #b47b84;
+  font-weight: 500;
+}
+
+.pie-redes {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.pie-icono {
+  font-size: 1.2rem;
+  color: #b47b84;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.pie-icono:hover {
+  transform: scale(1.2);
+}
