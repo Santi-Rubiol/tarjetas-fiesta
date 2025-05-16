@@ -14,13 +14,14 @@
 }
 
 .carrusel-scroll {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 1rem 1rem 1rem;
+  /* overflow-x: auto; */
   display: flex;
-  overflow-x: scroll;
   scroll-snap-type: x mandatory;
-  gap: 1rem;
-  padding-bottom: 1rem;
   scroll-behavior: smooth;
-  scrollbar-width: none;
+  gap: 1rem;
 }
 
 .carrusel-scroll::-webkit-scrollbar {
@@ -28,19 +29,21 @@
 }
 
 .carrusel-item {
-  min-width: 80%;
-  max-width: 90%;
-  scroll-snap-align: center;
-  flex-shrink: 0;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-  background-color: #fff;
+  flex: 0 0 auto;
+  width: 85vw;
+  max-width: 500px;
   transition: transform 0.3s ease;
 }
 
 .carrusel-item:hover {
   transform: scale(1.02);
+  /* ✋ Este hover solo debe estar activo en pantallas grandes */
+}
+
+@media (max-width: 768px) {
+  .carrusel-item:hover {
+    transform: none;
+  }
 }
 
 .carrusel-img {
